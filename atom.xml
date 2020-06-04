@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://coding.net/ricardohome/blog</id>
+    <id>https://ricardo-vv.github.io/Ricardohome/</id>
     <title>自闭少年羊驼小站</title>
-    <updated>2020-06-04T07:32:37.637Z</updated>
+    <updated>2020-06-04T07:36:40.359Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://coding.net/ricardohome/blog"/>
-    <link rel="self" href="https://coding.net/ricardohome/blog/atom.xml"/>
+    <link rel="alternate" href="https://ricardo-vv.github.io/Ricardohome/"/>
+    <link rel="self" href="https://ricardo-vv.github.io/Ricardohome/atom.xml"/>
     <subtitle>自闭少年在线打码</subtitle>
-    <logo>https://coding.net/ricardohome/blog/images/avatar.png</logo>
-    <icon>https://coding.net/ricardohome/blog/favicon.ico</icon>
+    <logo>https://ricardo-vv.github.io/Ricardohome/images/avatar.png</logo>
+    <icon>https://ricardo-vv.github.io/Ricardohome/favicon.ico</icon>
     <rights>All rights reserved 2020, 自闭少年羊驼小站</rights>
     <entry>
         <title type="html"><![CDATA[c++详细实现二叉查找树结点的删除]]></title>
-        <id>https://coding.net/ricardohome/blog/post/cxiang-xi-shi-xian-er-cha-cha-zhao-shu-jie-dian-de-shan-chu/</id>
-        <link href="https://coding.net/ricardohome/blog/post/cxiang-xi-shi-xian-er-cha-cha-zhao-shu-jie-dian-de-shan-chu/">
+        <id>https://ricardo-vv.github.io/Ricardohome/post/cxiang-xi-shi-xian-er-cha-cha-zhao-shu-jie-dian-de-shan-chu/</id>
+        <link href="https://ricardo-vv.github.io/Ricardohome/post/cxiang-xi-shi-xian-er-cha-cha-zhao-shu-jie-dian-de-shan-chu/">
         </link>
         <updated>2020-06-04T06:30:56.000Z</updated>
         <content type="html"><![CDATA[<p>💻💡<br>
@@ -211,8 +211,8 @@ int main() {
     </entry>
     <entry>
         <title type="html"><![CDATA[c++二叉树实现]]></title>
-        <id>https://coding.net/ricardohome/blog/post/cer-cha-shu-shi-xian/</id>
-        <link href="https://coding.net/ricardohome/blog/post/cer-cha-shu-shi-xian/">
+        <id>https://ricardo-vv.github.io/Ricardohome/post/cer-cha-shu-shi-xian/</id>
+        <link href="https://ricardo-vv.github.io/Ricardohome/post/cer-cha-shu-shi-xian/">
         </link>
         <updated>2020-06-04T05:57:29.000Z</updated>
         <content type="html"><![CDATA[<p><ul class="markdownIt-TOC">
@@ -489,8 +489,8 @@ int main() {
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://coding.net/ricardohome/blog/post/hello-gridea/</id>
-        <link href="https://coding.net/ricardohome/blog/post/hello-gridea/">
+        <id>https://ricardo-vv.github.io/Ricardohome/post/hello-gridea/</id>
+        <link href="https://ricardo-vv.github.io/Ricardohome/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
