@@ -1,22 +1,105 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://ricardo-vv.github.io/Ricardohome/</id>
-    <title>自闭少年羊驼小站</title>
-    <updated>2020-06-04T06:00:13.508Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://ricardo-vv.github.io/Ricardohome/"/>
-    <link rel="self" href="https://ricardo-vv.github.io/Ricardohome/atom.xml"/>
-    <subtitle>自闭少年在线打码</subtitle>
-    <logo>https://ricardo-vv.github.io/Ricardohome/images/avatar.png</logo>
-    <icon>https://ricardo-vv.github.io/Ricardohome/favicon.ico</icon>
-    <rights>All rights reserved 2020, 自闭少年羊驼小站</rights>
-    <entry>
-        <title type="html"><![CDATA[c++二叉树实现]]></title>
-        <id>https://ricardo-vv.github.io/Ricardohome/post/cer-cha-shu-shi-xian/</id>
-        <link href="https://ricardo-vv.github.io/Ricardohome/post/cer-cha-shu-shi-xian/">
-        </link>
-        <updated>2020-06-04T05:57:29.000Z</updated>
-        <content type="html"><![CDATA[<p><img src="https://ricardo-vv.github.io/Ricardohome//post-images/1591250404060.png" alt="" loading="lazy">@[TOC]</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>c++二叉树实现 | 自闭少年羊驼小站</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://ricardo-vv.github.io/Ricardohome//favicon.ico?v=1591250406202">
+<link rel="stylesheet" href="https://ricardo-vv.github.io/Ricardohome//styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="@[TOC]
+1.如何创建一棵二叉树
+创建一棵二叉树需要什么
+其实答案很简单，无非就是从根节点开始，逐步实现子节点的创建，从而实现树的整体框架
+由于树是一种特殊的线性表，所以对于生成后的树，我们应该可以对它进行查找，修改，插入等功能
+最后，..." />
+    <meta name="keywords" content="" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://ricardo-vv.github.io/Ricardohome/">
+        <img src="https://ricardo-vv.github.io/Ricardohome//images/avatar.png?v=1591250406202" class="site-logo">
+        <h1 class="site-title">自闭少年羊驼小站</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      自闭少年在线打码
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://ricardo-vv.github.io/Ricardohome//atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">c++二叉树实现</h2>
+            <div class="post-date">2020-06-04</div>
+            
+            <div class="post-content" v-pre>
+              <p><img src="https://ricardo-vv.github.io/Ricardohome//post-images/1591250404060.png" alt="" loading="lazy">@[TOC]</p>
 <h1 id="1如何创建一棵二叉树">1.如何创建一棵二叉树</h1>
 <p><mark><em>创建一棵二叉树需要什么</em></mark><br>
 其实答案很简单，无非就是从根节点开始，逐步实现子节点的创建，从而实现树的整体框架<br>
@@ -267,47 +350,46 @@ int main() {
 	return 0;
 }
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[WGLNB]]></title>
-        <id>https://ricardo-vv.github.io/Ricardohome/post/wglnb/</id>
-        <link href="https://ricardo-vv.github.io/Ricardohome/post/wglnb/">
-        </link>
-        <updated>2020-06-04T03:54:26.000Z</updated>
-        <content type="html"><![CDATA[<p>😭WSFW</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://ricardo-vv.github.io/Ricardohome/post/hello-gridea/</id>
-        <link href="https://ricardo-vv.github.io/Ricardohome/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
-]]></content>
-    </entry>
-</feed>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://ricardo-vv.github.io/Ricardohome/post/wglnb/">
+                  <h3 class="post-title">
+                    WGLNB
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
