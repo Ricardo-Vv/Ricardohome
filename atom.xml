@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ricardo-vv.github.io/Ricardohome/</id>
     <title>自闭少年羊驼小站</title>
-    <updated>2020-06-04T06:41:28.798Z</updated>
+    <updated>2020-06-04T06:42:13.921Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ricardo-vv.github.io/Ricardohome/"/>
     <link rel="self" href="https://ricardo-vv.github.io/Ricardohome/atom.xml"/>
@@ -215,8 +215,7 @@ int main() {
         <link href="https://ricardo-vv.github.io/Ricardohome/post/cer-cha-shu-shi-xian/">
         </link>
         <updated>2020-06-04T05:57:29.000Z</updated>
-        <content type="html"><![CDATA[<p><img src="https://ricardo-vv.github.io/Ricardohome//post-images/1591250404060.png" alt="" loading="lazy">@<br>
-💻💡<br>
+        <content type="html"><![CDATA[<p>💻💡<br>
 [TOC]</p>
 <h1 id="1如何创建一棵二叉树">1.如何创建一棵二叉树</h1>
 <p><mark><em>创建一棵二叉树需要什么</em></mark><br>
