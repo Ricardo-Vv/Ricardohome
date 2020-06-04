@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://ricardo-vv.github.io/Ricardohome/</id>
     <title>自闭少年羊驼小站</title>
-    <updated>2020-06-04T06:00:13.508Z</updated>
+    <updated>2020-06-04T06:31:49.137Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://ricardo-vv.github.io/Ricardohome/"/>
     <link rel="self" href="https://ricardo-vv.github.io/Ricardohome/atom.xml"/>
@@ -10,6 +10,204 @@
     <logo>https://ricardo-vv.github.io/Ricardohome/images/avatar.png</logo>
     <icon>https://ricardo-vv.github.io/Ricardohome/favicon.ico</icon>
     <rights>All rights reserved 2020, 自闭少年羊驼小站</rights>
+    <entry>
+        <title type="html"><![CDATA[c++详细实现二叉查找树结点的删除]]></title>
+        <id>https://ricardo-vv.github.io/Ricardohome/post/cxiang-xi-shi-xian-er-cha-cha-zhao-shu-jie-dian-de-shan-chu/</id>
+        <link href="https://ricardo-vv.github.io/Ricardohome/post/cxiang-xi-shi-xian-er-cha-cha-zhao-shu-jie-dian-de-shan-chu/">
+        </link>
+        <updated>2020-06-04T06:30:56.000Z</updated>
+        <content type="html"><![CDATA[<p><ul class="markdownIt-TOC">
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84%E5%AE%9A%E4%B9%89">二叉查找树的定义</a></li>
+<li><a href="#%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84%E7%BB%93%E7%82%B9%E5%88%A0%E9%99%A4%E5%8E%9F%E7%90%86">二叉查找树的结点删除原理</a>
+<ul>
+<li><a href="#%E6%89%BE%E5%88%B0%E6%9C%80%E5%A4%A7%E5%89%8D%E9%A9%B1%E7%BB%93%E7%82%B9">找到最大前驱结点</a></li>
+<li><a href="#%E6%89%BE%E5%88%B0%E6%9C%80%E5%B0%8F%E5%90%8E%E7%BB%A7%E8%8A%82%E7%82%B9">找到最小后继节点</a></li>
+<li><a href="#%E5%AE%9E%E7%8E%B0%E7%BB%93%E7%82%B9%E7%9A%84%E5%88%A0%E9%99%A4%E6%93%8D%E4%BD%9C">实现结点的删除操作</a></li>
+</ul>
+</li>
+<li><a href="#%E5%85%B7%E4%BD%93%E6%BA%90%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%8C%85%E5%90%AB%E4%BA%8C%E5%8F%89%E6%9F%A5%E6%89%BE%E6%A0%91%E7%9A%84%E5%A2%9E-%E5%88%A0-%E6%94%B9-%E6%9F%A5%E6%93%8D%E4%BD%9C">具体源码实现（包含二叉查找树的增、删、改、查操作）</a></li>
+</ul>
+<br>
+在之前的文章中，我们已经实现了<em>二叉查找树</em>的<strong>创建</strong>，以及<strong>查找</strong>、<strong>插入</strong>、<strong>修改</strong>等操作，接下来我们将讲解如何进行结点的删除操作<br>
+如果对<em>二叉查找树</em>的<strong>创建</strong>过程还不是熟悉，可以浏览 <a href="https://blog.csdn.net/weixin_42777504/article/details/103413314">c++二叉树查找树的建立</a>这篇文章，里面对于二叉树的实现原理有做详细的讲解</p>
+<h1 id="二叉查找树的定义">二叉查找树的定义</h1>
+<p>二叉查找树（Binary Search Tree），它或是一棵空树，或者是具有下列性质的二叉树： 若它的<strong>左子树不空</strong>，则左子树上所有结点的值<strong>均小于</strong>它的根结点的值； 若它的<strong>右子树不空</strong>，则右子树上所有结点的值<strong>均大于</strong>它的根结点的值； 它的左、右子树也分别为二叉排序树</p>
+<h1 id="二叉查找树的结点删除原理">二叉查找树的结点删除原理</h1>
+<ul>
+<li>由定义可知，对二叉查找树结点的删除有两种操作
+<ul>
+<li>第一种是在该节点的<strong>左子树</strong>里面，找到存储着<em>最大值</em>的结点（由于该节点存在于左子树，所以一定<strong>小于</strong>根节点）</li>
+<li>第二种是在该节点的<strong>右子树</strong>里面，找到存储着<em>最小值</em>的结点（由于该节点存在于右子树，所以一定<strong>大于</strong>根节点）<br>
+<img src="https://img-blog.csdnimg.cn/20191206140926239.png" alt="在这里插入图片描述" loading="lazy"></li>
+</ul>
+</li>
+<li>第一种情况对应将7替换为6</li>
+<li>第二种情况对应将7替换为9</li>
+</ul>
+<h2 id="找到最大前驱结点">找到最大前驱结点</h2>
+<ul>
+<li>我们将第一种情况定义为找到删除结点的<strong>最大前驱结点</strong>，事实上，所找到的结点的值也恰好是在被删除结点的<strong>前一位</strong></li>
+<li>实现源码如下：</li>
+</ul>
+<pre><code class="language-cpp">node* findMin(node* root) { 
+	while (root-&gt;lchild != NULL) {
+		root = root-&gt;rchild; //在左子树中不断向右，直到没有右孩子
+	}
+	return root;
+}
+</code></pre>
+<h2 id="找到最小后继节点">找到最小后继节点</h2>
+<ul>
+<li>我们将第二种情况定义为找到删除结点的<strong>最小后继结点</strong>，事实上，所找到的结点的值也恰好是在被删除结点的<strong>后一位</strong></li>
+<li>实现源码如下</li>
+</ul>
+<pre><code class="language-cpp">node* findMax(node* root) {
+	while (root-&gt;rchild != NULL) {
+		root = root-&gt;lchild; //在右子树中不断向左，直到没有左孩子
+	}
+	return root;
+}
+</code></pre>
+<h2 id="实现结点的删除操作">实现结点的删除操作</h2>
+<ul>
+<li>
+<p>假设我们决定用结点N的前驱结点P来替换N，于是就等于把问题转换为在N的左子树中删除P，按照这个思路，我们就可以一直递归下去，直到递归到最后一个叶子节点，就可以将该节点直接删除了。</p>
+</li>
+<li>
+<p>因此删除的实现思路如下：</p>
+<ul>
+<li>①如果当前结点为<strong>空</strong>，说明不存在权值为给定<strong>x</strong>的节点，直接返回</li>
+<li>②如果当前结点的<strong>权值</strong>恰好等于给定<strong>x</strong>，说明已经找到了目标结点，接下来进入删除操作
+<ul>
+<li>a.如果当前结点无左右孩子，说明为<strong>叶子节点</strong>，直接删除</li>
+<li>b.如果当前结点存在<strong>左孩子</strong>，则在左子树里面寻找<strong>前驱pre</strong>，然后让pre数值覆盖当前节点，接着在左子树里删除<strong>pre</strong></li>
+<li>c.如果当前结点存在<strong>右孩子</strong>，则在右子树里面寻找<strong>后继next</strong>，然后让next数值覆盖当前节点，接着在右子树里删除<strong>next</strong></li>
+</ul>
+</li>
+<li>③如果当前结点权值<strong>大于</strong>给定x，则在右子树中递归删除权值为x的结点，反之则在左子树中进行递归删除操作</li>
+</ul>
+<p>具体实现代码如下：</p>
+</li>
+</ul>
+<pre><code class="language-cpp">void deleteNode(node*&amp; root,int x) {
+	if (root == NULL) return; //不存在权值为x的结点
+	if(root-&gt;data == x){      //找到欲删除结点
+		if (root-&gt;rchild == NULL &amp;&amp; root-&gt;lchild == NULL) {
+			root = NULL;      //叶子结点直接删除
+		}
+		else if (root-&gt;lchild != NULL) { //左子树不为空
+			node* pre = findMin(root-&gt;lchild);
+			root-&gt;data = pre-&gt;data;  //前驱覆盖root
+			deleteNode(root-&gt;lchild, pre-&gt;data); //删除pre
+		}
+		else {
+			node* next = findMax(root-&gt;rchild); //右子树不为空
+			root-&gt;data = next-&gt;data; //后继覆盖root
+			deleteNode(root-&gt;rchild, next-&gt;data); //删除next
+		}
+	}
+	else if (x &lt; root-&gt;data) { 
+		deleteNode(root-&gt;lchild,x); //在左子树删除x
+	}
+	else deleteNode(root-&gt;rchild,x); //在右子树删除x
+}
+</code></pre>
+<h1 id="具体源码实现包含二叉查找树的增-删-改-查操作">具体源码实现（包含二叉查找树的增、删、改、查操作）</h1>
+<pre><code class="language-cpp">#include&lt;iostream&gt;
+using namespace std;
+
+struct node{           //结点存储结果定义
+	int data;
+	node* lchild;
+	node* rchild;
+};
+
+node* newNode(int v) { //生成新节点
+	node* Node = new node;
+	Node-&gt;data = v;
+	Node-&gt;lchild = Node-&gt;rchild = NULL;
+	return Node;
+}
+
+void insert(node* &amp;root, int x) { //结点的插入
+	if (root == NULL) {
+		root = newNode(x);
+	}
+	if (x == root-&gt;data) return;
+	else if(x &lt; root-&gt;data){
+		insert(root-&gt;lchild, x);
+	}
+	else
+	{
+		insert(root-&gt;rchild, x);
+	}
+}
+
+node* create(int data[], int n) { //二叉搜索树创建
+	node* root = NULL;
+	for (int i = 0; i &lt; n; i++) {
+		insert(root, data[i]);
+	}
+	return root;
+}
+void preorder(node * root) { //前序遍历
+	if (root == NULL) return;
+	cout &lt;&lt; root-&gt;data&lt;&lt;endl;
+	preorder(root-&gt;lchild);
+	preorder(root-&gt;rchild);
+}
+
+node* findMin(node* root) { 
+	while (root-&gt;lchild != NULL) {
+		root = root-&gt;rchild; //在左子树中不断向右，直到没有右孩子
+	}
+	return root;
+}
+
+node* findMax(node* root) {
+	while (root-&gt;rchild != NULL) {
+		root = root-&gt;lchild; //在右子树中不断向左，直到没有左孩子
+	}
+	return root;
+}
+
+void deleteNode(node*&amp; root,int x) {
+	if (root == NULL) return; //不存在权值为x的结点
+	if(root-&gt;data == x){      //找到欲删除结点
+		if (root-&gt;rchild == NULL &amp;&amp; root-&gt;lchild == NULL) {
+			root = NULL;      //叶子结点直接删除
+		}
+		else if (root-&gt;lchild != NULL) { //左子树不为空
+			node* pre = findMin(root-&gt;lchild);
+			root-&gt;data = pre-&gt;data;  //前驱覆盖root
+			deleteNode(root-&gt;lchild, pre-&gt;data); //删除pre
+		}
+		else {
+			node* next = findMax(root-&gt;rchild); //右子树不为空
+			root-&gt;data = next-&gt;data; //后继覆盖root
+			deleteNode(root-&gt;rchild, next-&gt;data); //删除next
+		}
+	}
+	else if (x &lt; root-&gt;data) { 
+		deleteNode(root-&gt;lchild,x); //在左子树删除x
+	}
+	else deleteNode(root-&gt;rchild,x); //在右子树删除x
+}
+
+int main() {
+	
+	int n = 10;
+	int nums[10] = { 5,3,8,2,4,1,6,7,9,0 };
+	node* root = create(nums, n);
+	//preorder(root);
+	deleteNode(root, 5);
+	preorder(root);
+	system(&quot;pause&quot;);
+	return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[c++二叉树实现]]></title>
         <id>https://ricardo-vv.github.io/Ricardohome/post/cer-cha-shu-shi-xian/</id>
